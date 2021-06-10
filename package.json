@@ -1,0 +1,23 @@
+{
+  "name": "@conflux-dev/js-sdk-example",
+  "version": "1.0.0",
+  "description": "Usage example of js-conflux-sdk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conflux-fans/js-sdk-example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/conflux-fans/js-sdk-example/issues"
+  },
+  "homepage": "https://github.com/conflux-fans/js-sdk-example#readme",
+  "dependencies": {
+    "js-conflux-sdk": "^1.6.2"
+  }
+}

@@ -1,2 +1,5 @@
 # js-sdk-example
-Usage example of js-conflux-sdk
+`js-conflux-sdk` usage examples
+
+1. Sending transaction
+2. Interact with contract
