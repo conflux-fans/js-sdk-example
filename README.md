@@ -3,3 +3,5 @@
 
 1. Sending transaction
 2. Interact with contract
+3. Recover portal personal_sign's signature
+
