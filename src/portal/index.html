@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Portal test</title>
+  </head>
+  <body>
+    <button class="enableEthereumButton">Enable Conflux</button>
+    <h2>Account: <span class="showAccount"></span></h2>
+    <script>
+      let account;
+      const ethereumButton = document.querySelector('.enableEthereumButton');
+      const showAccount = document.querySelector('.showAccount');
+
+      ethereumButton.addEventListener('click', () => {
+        getAccount();
+      });
+
+      async function getAccount() {
+        const accounts = await conflux.send('cfx_requestAccounts');
+        account = accounts[0];
+        showAccount.innerHTML = account;
+      }
+    </script>
+    <button class='personal_sign'>personal_sign 'hello world'</button>
+    <script>
+      const sign_btn = document.querySelector('.personal_sign');
+      
+
+      sign_btn.addEventListener('click', async () => {
+        console.log(account);
+        conflux.sendAsync({
+          method: 'personal_sign', 
+          params: ['hello', account],
+        }, function(err, result) {
+          console.log(result);
+        });
+      });
+    </script>
+  </body>
+</html>
