@@ -8,6 +8,7 @@ const mnemonic = 'your mnemonic words';  // replace with real mnemonic words
 async function main() {
 
   let index = 1;
+  // conflux coin path is `m/44'/503'/0'/0`
   let account = await getNthAccountOfHDKey({
     mnemonic,
     nth: index  // the account index
