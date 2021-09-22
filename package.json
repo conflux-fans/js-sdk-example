@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/conflux-fans/js-sdk-example#readme",
   "dependencies": {
+    "@fluent-wallet/hdkey": "^0.1.0",
     "js-conflux-sdk": "^1.6.2"
   }
 }
