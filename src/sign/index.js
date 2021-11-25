@@ -1,22 +1,25 @@
-const {Message, format, sign} = require('js-conflux-sdk');
+const {Message, format, sign, PersonalMessage} = require('js-conflux-sdk');
 const PREFIX = '\x19Conflux Signed Message:\n';
-// const PREFIX2 = '\u0019Conflux Signed Message:\n';
+const PREFIX2 = '\u0019Conflux Signed Message:\n';  // same as above
+const NETWORK_ID = 1029;
 
-let portalSig = "0x11efaa79ac64f46682d427cfa8c2b5cf7d22f0bc97a1c52ee60e442ee3e4c00212417a3f646209af682d46a890fa1928460c6e02a737432e6f19b7e57ff0c6631b";
-let hexAddress = recoverPortalPersonalSign(portalSig, 'personal sign data');
-console.log('Hex format address: ' + hexAddress);
+const signer = 'cfx:aak2rra2njvd77ezwjvx04kkds9fzagfe6ku8scz91';
+const message = 'Hello World';
+const portalSig = "0x5f8499879ce281ff083f5716de68ab6d05b176edbb27b6c5882ab482dc00478e33679f15a30bc60510faab49c2bd0bf883ad0a45ad3160e424b35cddcc1ee85d1c";
+
+let hexAddress = recoverPortalPersonalSign(portalSig, message);
+console.log('Hex format address: ', hexAddress);
 let address = format.address(hexAddress, 1029);
-console.log('Address: ' + address);
+console.log('Address: ', address);
 
 /*
 * This function will return the hex address of the signer
 */
 function recoverPortalPersonalSign(signature, message) {
   let v = parseInt(signature.slice(130), 16) - 27;
-  signature = signature.slice(0, 130) + '0' + v.toString(16);  // deal the value v
-  const messageHex = format.hex(Buffer.from(message));
+  signature = signature.slice(0, 130) + format.hex(v).slice(2);  // deal the value v
+  const messageHex = message.startsWith('0x') ? message : format.hex(Buffer.from(message));
   let msg = new Message(PREFIX + messageHex.length + messageHex);
   let publicKey = Message.recover(signature, msg.hash);
-  let publicKeyBuffer = Buffer.from(publicKey.slice(2), 'hex'); // remove the 0x prefix, then convert it to buffer
-  return '0x' + sign.publicKeyToAddress(publicKeyBuffer).toString('hex')
+  return '0x' + sign.publicKeyToAddress(format.hexBuffer(publicKey)).toString('hex')
 }

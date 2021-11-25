@@ -1,15 +1,20 @@
 const { Conflux, Drip, CONST } = require('js-conflux-sdk');
-const cfx = new Conflux({
+
+const conflux = new Conflux({
   url: 'https://test.confluxrpc.com',
   networkId: 1,
 });
-const account = cfx.wallet.addPrivateKey(process.env.PRIVATE_KEY);
+
+// NOTE: Replace with your own private key which have CFX balance
+const account = conflux.wallet.addPrivateKey(process.env.PRIVATE_KEY);
 const targetAddress = 'cfxtest:aame568esrpusxku1c449939ntrx2j0rxpmm5ge874';
 
 module.exports = {
-  cfx,
+  conflux,
   account,
   targetAddress,
   CRC20_ABI: require('./crc20.json').abi,
   FC_ADDRESS: 'cfxtest:achkx35n7vngfxgrm7akemk3ftzy47t61yk5nn270s',
+  Drip,
+  CONST,
 };

@@ -23,15 +23,16 @@
     <button class='personal_sign'>personal_sign 'hello world'</button>
     <script>
       const sign_btn = document.querySelector('.personal_sign');
-      
+      let message = 'Hello World';
+      // message = '0x48656c6c6f20576f726c64';
 
       sign_btn.addEventListener('click', async () => {
-        console.log(account);
+        console.log('account: ', account);
         conflux.sendAsync({
           method: 'personal_sign', 
-          params: ['hello', account],
+          params: [message, account],
         }, function(err, result) {
-          console.log(result);
+          console.log("sign result: ", result);
         });
       });
     </script>

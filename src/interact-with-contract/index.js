@@ -14,9 +14,11 @@ async function main() {
     abi: CRC20_ABI,
   });
   
+  // query contract status
   let balance = await fc.balanceOf(account.address);
   console.log(`${account.address} FC balance is : ${balance}`);
 
+  // change contract status by sending transaction
   let hash = await fc.transfer(targetAddress, 100).sendTransaction({
     from: account.address,
   });
