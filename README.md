@@ -20,6 +20,8 @@ $ npx hardhat compile
 
 ## Example list
 
-1. Sending transaction
-2. Interact with contract
-3. Recover portal personal_sign's signature
+0. `./src/init.js` SDK initialize
+1. `./src/index.js` Query blockchain info by invoke RPC methods
+2. `./src/sending-tx` How to send conflux transactions
+3. `./src/interact-with-contract` Interact with contract: Query contract state; update contract state
+4. `./src/sign` Recover portal personal_sign's signature
