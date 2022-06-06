@@ -13,7 +13,7 @@ module.exports = {
   conflux,
   account,
   targetAddress,
-  CRC20_ABI: require('./crc20.json').abi,
+  CRC20_ABI: require('../abis/crc20.json').abi,
   FC_ADDRESS: 'cfxtest:achkx35n7vngfxgrm7akemk3ftzy47t61yk5nn270s',
   Drip,
   CONST,

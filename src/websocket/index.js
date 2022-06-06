@@ -6,7 +6,7 @@ const cfx = new Conflux({
 const account = cfx.wallet.addPrivateKey(process.env.PRIVATE_KEY);
 const targetAddress = 'cfxtest:aame568esrpusxku1c449939ntrx2j0rxpmm5ge874';
 const erc20_contract_address = 'cfxtest:acbkpy75s2mtaesb9m5vfjp1hj6hru9h0yex0vsuj5';
-const { abi } = require('../crc20.json');
+const { abi } = require('../../abis/crc20.json');
 const erc20_contract = cfx.Contract({
   address: erc20_contract_address,
   abi

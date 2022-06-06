@@ -1,15 +1,25 @@
-# Basic Sample Hardhat Project
+# js-sdk-example
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+This repo contains several `js-conflux-sdk` usage examples, which are are located at `src` folder.
 
-Try running some of the following tasks:
+It also contain some contracts, they can be compiled by hardhat `npx hardhat compile`.
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+## Local Develop Environment
+
+Install dependencies.
+
+```sh
+$ npm install
 ```
+
+Compile contracts
+
+```sh
+$ npx hardhat compile
+```
+
+## Example list
+
+1. Sending transaction
+2. Interact with contract
+3. Recover portal personal_sign's signature
