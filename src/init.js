@@ -1,7 +1,8 @@
+require('dotenv').config();
 const { Conflux, Drip, CONST } = require('js-conflux-sdk');
 
 const conflux = new Conflux({
-  url: 'https://test.confluxrpc.com',
+  url: process.env.URL,
   networkId: 1,
 });
 

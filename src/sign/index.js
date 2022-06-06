@@ -1,4 +1,4 @@
-const {Message, format, sign, PersonalMessage} = require('js-conflux-sdk');
+const { Message, format, sign, PersonalMessage } = require('js-conflux-sdk');
 const PREFIX = '\x19Conflux Signed Message:\n';
 const PREFIX2 = '\u0019Conflux Signed Message:\n';  // same as above
 const NETWORK_ID = 1029;

@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Portal test</title>
+    <title>Wallet test</title>
   </head>
   <body>
     <button class="enableEthereumButton">Enable Conflux</button>
@@ -15,7 +15,7 @@
       });
 
       async function getAccount() {
-        const accounts = await conflux.send('cfx_requestAccounts');
+        const accounts = await conflux.request({method: 'cfx_accounts'});
         account = accounts[0];
         showAccount.innerHTML = account;
       }
@@ -28,10 +28,10 @@
 
       sign_btn.addEventListener('click', async () => {
         console.log('account: ', account);
-        conflux.sendAsync({
+        conflux.request({
           method: 'personal_sign', 
           params: [message, account],
-        }, function(err, result) {
+        }).then(function(result) {
           console.log("sign result: ", result);
         });
       });
