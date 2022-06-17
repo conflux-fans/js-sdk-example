@@ -3,7 +3,7 @@ const { Conflux, Drip, CONST } = require('js-conflux-sdk');
 
 const conflux = new Conflux({
   url: process.env.URL,
-  networkId: 1,
+  networkId: Number(process.env.NETWORKID),
 });
 
 // NOTE: Replace with your own private key which have CFX balance

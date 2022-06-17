@@ -1,4 +1,4 @@
-import {getNthAccountOfHDKey} from "@fluent-wallet/hdkey";
+import { getNthAccountOfHDKey } from "@fluent-wallet/hdkey";
 import { sign, format } from "js-conflux-sdk";
 
 const networkId = 1;
