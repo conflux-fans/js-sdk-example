@@ -18,6 +18,14 @@ Compile contracts
 $ npx hardhat compile
 ```
 
+Add local env file
+
+```sh
+$ cp .env.example .env 
+```
+
+Edit the options `URL`, `NETWORKID`, `PRIVATE_KEY` in it.
+
 ## Example list
 
 0. `./src/init.js` SDK initialize

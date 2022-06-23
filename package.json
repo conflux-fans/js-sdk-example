@@ -4,7 +4,7 @@
   "description": "Usage example of js-conflux-sdk",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "@nomiclabs/hardhat-ethers": "^2.0.4",
     "ethereum-waffle": "^3.4.0",
     "ethers": "^5.5.3",
-    "hardhat": "^2.8.2"
+    "hardhat": "^2.8.2",
+    "jest": "^28.1.1"
   }
 }
