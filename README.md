@@ -30,10 +30,10 @@ Edit the options `URL`, `NETWORKID`, `PRIVATE_KEY` in it.
 
 ### Basic
 
-0. [SDK initialize]('./src/init.js')
+0. [SDK initialize](./src/init.js)
 1. [Query blockchain info by invoke RPC methods](./src/index.js)
 2. [How to send conflux transactions](./src/sending-tx/index.js)
-3. [Interact with contract: Query contract state; update contract state](./src/interact-with-contract/index.js) 
+3. [Interact with contract: Query contract state; update contract state](./src/interact-with-contract/index.js)
 4. [Recover portal personal_sign's signature](./src/sign/index.js)
 
 ### Accounts
