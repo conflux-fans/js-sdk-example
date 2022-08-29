@@ -26,10 +26,17 @@ $ cp .env.example .env
 
 Edit the options `URL`, `NETWORKID`, `PRIVATE_KEY` in it.
 
-## Example list
+## Examples
 
-0. `./src/init.js` SDK initialize
-1. `./src/index.js` Query blockchain info by invoke RPC methods
-2. `./src/sending-tx` How to send conflux transactions
-3. `./src/interact-with-contract` Interact with contract: Query contract state; update contract state
-4. `./src/sign` Recover portal personal_sign's signature
+### Basic
+
+0. [SDK initialize]('./src/init.js')
+1. [Query blockchain info by invoke RPC methods](./src/index.js)
+2. [How to send conflux transactions](./src/sending-tx/index.js)
+3. [Interact with contract: Query contract state; update contract state](./src/interact-with-contract/index.js) 
+4. [Recover portal personal_sign's signature](./src/sign/index.js)
+
+### Accounts
+
+1. [Batch generate account](./src/accounts/batch-gen-account.js)
+2. [HD Wallet](./src/accounts/hd/index.mjs)

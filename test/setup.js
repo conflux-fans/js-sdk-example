@@ -1,13 +1,13 @@
 require('dotenv').config();
 const {
-  Conflux, 
+  Conflux,
   Drip, 
   format
 } = require('js-conflux-sdk');
 
 const conflux = new Conflux({
-  url: 'https://test.confluxrpc.com',
-  networkId: 1,
+  url: process.env.URL,
+  networkId: Number(process.env.NETWORKID),
 });
 
 module.exports = {
