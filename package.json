@@ -24,10 +24,12 @@
     "@openzeppelin/contracts": "^4.4.2",
     "dotenv": "^16.0.1",
     "hardhat-conflux": "^0.0.2",
-    "js-conflux-sdk": "^2.1.2"
+    "js-conflux-sdk": "^2.1.6",
+    "web3": "^1.8.1"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.4",
+    "chai": "^4.3.7",
     "ethereum-waffle": "^3.4.0",
     "ethers": "^5.5.3",
     "hardhat": "^2.8.2",

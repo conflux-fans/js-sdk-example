@@ -1,15 +1,5 @@
 const abi = [
-    {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "initialSupply",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "nonpayable",
-        "type": "constructor"
-    },
+    "constructor(uint256)",
     'function name() view returns (string)',
     'function symbol() view returns (string)',
     'function decimals() view returns (uint8)',
