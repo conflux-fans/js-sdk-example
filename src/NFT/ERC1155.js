@@ -1,13 +1,5 @@
-const { Conflux } = require('js-conflux-sdk');
+const { conflux, account } = require('../init');
 const ERC1155 = require('../abis/ERC1155.json');
-
-const conflux = new Conflux({
-  url: 'https://main.confluxrpc.com',
-  networkId: 1029
-});
-
-// Add sender's private key to wallet
-const account = conflux.wallet.addPrivateKey(process.env.PRIVATE_KEY);
 
 const nftContract = conflux.Contract({
   abi: ERC1155.abi,  // use the erc1155 contract's abi

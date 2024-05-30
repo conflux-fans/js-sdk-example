@@ -7,13 +7,16 @@ const {
 } = require('../init');
 
 
-async function _getBalance(address) {
+async function getBalance(address) {
   const balance = await conflux.cfx.getBalance(address);
   const balanceInDrip = Drip(balance);
   console.log(`Balance of ${address} is ${balanceInDrip.toCFX()} CFX`);
+
+  return balance;
 }
 
 // Quick send a simple transaction, just specify the from, to, value
+// make sure the account has enough balance to cover the value and gas fee
 async function sendSimpleTx() {
   const hash = await conflux.cfx.sendTransaction({
     from: account.address,
@@ -23,14 +26,13 @@ async function sendSimpleTx() {
   return hash;
 }
 
-// Sending a complete TX
+// You can also send a complete transaction by specifying all the tx meta info
 async function sendCompleteTX() {
-  // prepare the tx meta info
   const currentEpoch = await conflux.cfx.getEpochNumber();
   const nonce = await conflux.cfx.getNextNonce(account.address);
   const value = Drip.fromCFX(1.1);
   const chainId = 1;
-  const gasPrice = 1;
+  const gasPrice = await conflux.cfx.gasPrice();
   let txInfo = {
     from: account.address,
     to: targetAddress,
@@ -44,6 +46,7 @@ async function sendCompleteTX() {
   let estimate = await conflux.cfx.estimateGasAndCollateral(txInfo);
   txInfo.gas = estimate.gasLimit;
   txInfo.storageLimit = estimate.storageCollateralized;
+
   const hash = await conflux.cfx.sendTransaction(txInfo);
   return hash;
 }
@@ -79,20 +82,17 @@ async function checkTxConfirmed(hash) {
   // check whether the tx is confirmed
   let confirmedEpoch = await conflux.cfx.getEpochNumber(CONST.EPOCH_NUMBER.LATEST_CONFIRMED);
   console.log("Confirmed: ", receipt.epochNumber < confirmedEpoch, receipt.epochNumber - confirmedEpoch);
-
-  // let risk = await cfx.getConfirmationRiskByHash(receipt.blockHash);
-  // console.log(risk);
 }
 
 async function main() {
   // check balance
-  await _getBalance(targetAddress);
+  await getBalance(targetAddress);
   //
-  let hash = await sendSimpleTx();
+  // let hash = await sendSimpleTx();
   // let hash = await txStatusHelperMethods();
   //
-  // await sendCompleteTX();
-  await checkConfirmed(hash);
+  let hash = await sendCompleteTX();
+  await checkTxConfirmed(hash);
 }
 
 main().catch(console.log);

@@ -24,7 +24,7 @@
     "@openzeppelin/contracts": "^4.4.2",
     "dotenv": "^16.0.1",
     "hardhat-conflux": "^0.0.2",
-    "js-conflux-sdk": "^2.1.6",
+    "js-conflux-sdk": "^2.4.1",
     "web3": "^1.8.1"
   },
   "devDependencies": {

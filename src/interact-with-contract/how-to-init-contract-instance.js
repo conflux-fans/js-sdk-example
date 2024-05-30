@@ -1,9 +1,5 @@
 const {
     conflux, 
-    account,
-    FC_ADDRESS,
-    CRC20_ABI,
-    targetAddress,
   } = require('../init');
   
   const abi = [

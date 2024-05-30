@@ -1,7 +1,14 @@
-const { conflux, account, Drip, targetAddress } = require('./init');
-const {abi} = require('../abis/crc20.json')
+const { conflux, FC_ADDRESS, CRC20_ABI } = require('./init');
 
-const c = conflux.Contract({abi});
+// This example shows how to call a contract method
 
-let a = c.name();
-console.log(a);
+// Instantiate a contract object with the abi and address
+const c = conflux.Contract({abi: CRC20_ABI, address: FC_ADDRESS});
+
+async function main() {
+    // Call the name() method of the contract
+    let res = await c.name();
+    console.log(`Result: ${res}`);
+}
+
+main().catch(e => console.error(e));
