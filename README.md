@@ -6,16 +6,12 @@ It also contain some contracts, they can be compiled by hardhat `npx hardhat com
 
 ## Local Develop Environment
 
+[Node.js](https://nodejs.org/) is required to run the examples.
+
 Install dependencies.
 
 ```sh
 $ npm install
-```
-
-Compile contracts
-
-```sh
-$ npx hardhat compile
 ```
 
 Add local env file
@@ -25,6 +21,18 @@ $ cp .env.example .env
 ```
 
 Edit the options `URL`, `NETWORKID`, `PRIVATE_KEY` in it.
+
+Compile contracts
+
+```sh
+$ npx hardhat compile
+```
+
+## Faucet
+
+You can get some testnet CFX from [Conflux Testnet Faucet](https://faucet.confluxnetwork.org/). 
+
+[FluentWallet](https://fluentwallet.com/) is required to use the faucet.
 
 ## Examples
 
@@ -40,3 +48,10 @@ Edit the options `URL`, `NETWORKID`, `PRIVATE_KEY` in it.
 
 1. [Batch generate account](./src/accounts/batch-gen-account.js)
 2. [HD Wallet](./src/accounts/hd/index.mjs)
+
+## Resources
+
+- [ConfluxScan](https://confluxscan.io/)
+- [FluentWallet](https://fluentwallet.com/)
+- [Conflux Testnet Faucet](https://faucet.confluxnetwork.org/)
+- [Conflux documentation](https://doc.confluxnetwork.org/)

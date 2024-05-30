@@ -6,7 +6,7 @@ const fs = require('fs');
 async function main() {
     const epochNumber = await conflux.getEpochNumber();
 
-    const txhash = '0x6aee5bc3b06602357ef424ae69946f555b8b2c464cb7abd33f764a991fa14d0e';
+    const txhash = '0x2596111cbf83238cf4582bcfaba4e8bb139e4c6702938242a828496c93a5f886';
 
     const trace = await conflux.traceTransaction(txhash);
     console.log(trace);
