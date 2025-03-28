@@ -51,7 +51,7 @@ You can get some testnet CFX from [Conflux Testnet Faucet](https://faucet.conflu
 
 ## Resources
 
-- [ConfluxScan](https://confluxscan.io/)
+- [ConfluxScan](https://confluxscan.org/)
 - [FluentWallet](https://fluentwallet.com/)
 - [Conflux Testnet Faucet](https://faucet.confluxnetwork.org/)
 - [Conflux documentation](https://doc.confluxnetwork.org/)
