@@ -12,8 +12,21 @@ const contractMeta = require('../../abis/1155.json');
 const targetAddress1 = 'cfxtest:aat3bzj1mhgubvfj4psdety7d5x46a9v92gtj86mvj';
 
 async function main() {
+  const {abi, bytecode} = require('../../artifacts/contracts/YourContract.sol/YourContract.json');
+  const contract = conflux.Contract({
+    abi,
+    bytecode,
+  });
+
+  // If contract has parameters, you can set them as constructor arguments
+  console.log(account.address);
+  let receipt = await contract.constructor(account.address).sendTransaction({
+    from: account.address,
+  }).executed();
+
+  console.log("New deployed contract address:", receipt.contractCreated);
   // await deploy();
-  await callContractMethod();
+  // await callContractMethod();
 //   await setSponsor('CFXTEST:TYPE.CONTRACT:ACD0UU2ZF490D9Y5ZS0C070X6E95K3UK9P4X12P6T8');
 }
 
